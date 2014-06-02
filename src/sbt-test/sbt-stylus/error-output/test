@@ -1,0 +1,5 @@
+# Compile a stylus file and see that errors are reported.
+> set JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
+
+-> assets
+$ exists target/unrecognised-input-error

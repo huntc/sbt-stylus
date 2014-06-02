@@ -1,0 +1,13 @@
+# Compile a less file
+
+> set JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
+
+> assets
+$ exists target/web/public/main/css/main.css
+
+# Compile with compression
+
+> set StylusKeys.compress in Assets := true
+> assets
+-$ exists target/web/public/main/css/main.css
+$ exists target/web/public/main/css/main.min.css
