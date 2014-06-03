@@ -9,7 +9,7 @@ version := "1.0.0-SNAPSHOT"
 scalaVersion := "2.10.4"
 
 libraryDependencies ++= Seq(
-  "com.typesafe" % "jstranspiler" % "1.0.0-SNAPSHOT",
+  "com.typesafe" % "jstranspiler" % "1.0.0",
   "org.webjars" % "mkdirp" % "0.3.5",
   "org.webjars" % "stylus" % "0.45.1",
   "org.webjars" % "when-node" % "3.2.2"
