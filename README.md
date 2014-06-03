@@ -37,7 +37,7 @@ that are required for compilation. Beyond just `main.styl`, you can use an expre
 following:
 
 ```scala
-includeFilter in (Assets, StylusKeys.less) := "foo.styl" | "bar.styl"
+includeFilter in (Assets, StylusKeys.stylus) := "foo.styl" | "bar.styl"
 ```
 
 ...where both `foo.styl` and `bar.styl` will be considered for the Stylus compiler.
@@ -50,9 +50,9 @@ you may have a convention where any Stylus file starting with an `_` should not 
 include all `.styl` files but exclude any beginning with an `_` you can use the following declaration:
 
 ```scala
-includeFilter in (Assets, LessKeys.less) := "*.styl"
+includeFilter in (Assets, StylusKeys.stylus) := "*.styl"
 
-excludeFilter in (Assets, LessKeys.less) := "_*.styl"
+excludeFilter in (Assets, StylusKeys.stylus) := "_*.styl"
 ```
 
 &copy; Typesafe Inc., 2014
