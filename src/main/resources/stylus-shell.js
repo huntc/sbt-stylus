@@ -5,7 +5,8 @@ var fs = require("fs"),
     nodefn = require("when/node"),
     mkdirp = require("mkdirp"),
     path = require("path"),
-    stylus = require("stylus");
+    stylus = require("stylus"),
+    nib = require("nib");
 
 var promised = {
     mkdirp: nodefn.lift(mkdirp),
@@ -25,7 +26,8 @@ function processor(input, output) {
     var options = args.options;
     options.filename = input;
 
-    var style = stylus(contents, options);
+    var style = stylus(contents, options)
+    if (options.useNib) style.use(nib());
 
     style.render(function (err, css) {
         if (err) {

@@ -25,12 +25,38 @@ Here are the options:
 Option              | Description
 --------------------|------------
 compress            | Compress output by removing some whitespaces.
-    
+useNib              | Adds nib dependency
+
+## Use Nib:
+
+```scala
+StylusKeys.useNib in Assets := true
+```
+
+```stylus
+@import 'nib'
+
+div
+  box-shadow: 2px 2px 2px #000
+```
+will compile to:
+```css
+div {
+  -webkit-box-shadow: 2px 2px 2px #000;
+  box-shadow: 2px 2px 2px #000;
+}
+```
+
+
+## Compression
+
 The following sbt code illustrates how compression can be enabled:
 
 ```scala
 StylusKeys.compress in Assets := true
 ```
+
+## File filters
 
 By default only `main.styl` is looked for given that the Stylus compiler must be explicitly fed the files
 that are required for compilation. Beyond just `main.styl`, you can use an expression in your `build.sbt` like the

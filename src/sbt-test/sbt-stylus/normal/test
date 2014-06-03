@@ -1,6 +1,7 @@
 # Compile a less file
 
 > set JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
+> set StylusKeys.useNib in Assets := true
 
 > assets
 $ exists target/web/public/main/css/main.css

@@ -12,6 +12,7 @@ object Import {
     val stylus = TaskKey[Seq[File]]("stylus", "Invoke the stylus compiler.")
 
     val compress = SettingKey[Boolean]("stylus-compress", "Compress output by removing some whitespaces.")
+    val useNib = SettingKey[Boolean]("stylus-nib", "Use stylus nib.")
   }
 
 }
@@ -34,12 +35,14 @@ object SbtStylus extends AutoPlugin {
     includeFilter := GlobFilter("main.styl"),
 
     jsOptions := JsObject(
-      "compress" -> JsBoolean(compress.value)
+      "compress" -> JsBoolean(compress.value),
+      "useNib" -> JsBoolean(useNib.value)
     ).toString()
   )
 
   override def projectSettings = Seq(
-    compress := false
+    compress := false,
+    useNib := false
 
   ) ++ inTask(stylus)(
     SbtJsTask.jsTaskSpecificUnscopedSettings ++
