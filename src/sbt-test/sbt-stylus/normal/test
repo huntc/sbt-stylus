@@ -5,6 +5,7 @@
 
 > assets
 $ exists target/web/public/main/css/main.css
+> checkMainCssContents
 
 # Compile with compression
 
